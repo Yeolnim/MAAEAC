@@ -22,7 +22,7 @@ Codes for our manuscript draft: "Multi-task Learning with Multi-head Attention f
 We use `en_ core_ web_lg` for more accurate results.
 
 ## Dataset
-Download the SemEval dataset on 
+Download the SemEval dataset on: 
 * [SemEval-2014 Task 4](https://alt.qcri.org/semeval2014/task4/)
 * [SemEval-2015 Task 12](http://alt.qcri.org/semeval2015/task12/)
 * [SemEval-2016 Task 5](http://alt.qcri.org/semeval2016/task5/)
@@ -62,7 +62,6 @@ We use the configuration file to manage experiments setting.
 
 Training in batches by experiments configuration file, refer to the [experiments.json](experiments.json) to manage experiments.
 
-Then, 
 ```sh
 python train.py --config_path experiments.json
 ```

@@ -12,7 +12,7 @@ Codes for our manuscript draft: "Multi-task Learning with Multi-head Attention f
 * Python >= 3.7
 * PyTorch >= 1.0
 * [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) = 1.2.0
-* spaCy >= 3.0  
+* [spaCy](https://github.com/explosion/spaCy) >= 3.0  
 * Set `use_bert_spc = True` to improve the APC performance while only APC is evaluated.
 
 ## Installation
@@ -22,11 +22,10 @@ Codes for our manuscript draft: "Multi-task Learning with Multi-head Attention f
 We use `en_ core_ web_lg` for more accurate results.
 
 ## Dataset
-Download the SemEval dataset on: 
+Download the SemEval dataset on 
 * [SemEval-2014 Task 4](https://alt.qcri.org/semeval2014/task4/)
 * [SemEval-2015 Task 12](http://alt.qcri.org/semeval2015/task12/)
 * [SemEval-2016 Task 5](http://alt.qcri.org/semeval2016/task5/)
-
 
 ## BERT Language Model Finetuning
 ### Preparing data for BERT Language Model Finetuning
@@ -39,7 +38,6 @@ for the domains laptops and restaurants:
     check http://jmcauley.ucsd.edu/data/amazon/amazon_readme.txt
 * Yelp restaurants dataset:
     * https://www.yelp.com/dataset/download (3.9 GB)
-    * Extract review.json
     
 ### BERT language models finetuned on a specific domain
 
@@ -62,6 +60,7 @@ We use the configuration file to manage experiments setting.
 
 Training in batches by experiments configuration file, refer to the [experiments.json](experiments.json) to manage experiments.
 
+Then, 
 ```sh
 python train.py --config_path experiments.json
 ```
@@ -97,7 +96,7 @@ We made our efforts to make our benchmarks reproducible. However, the performanc
 ![semeval2014](assets/SemEval-results.png)
 
 ## Model Architecture
-![lcf](assets/maaeac.png)
+![maaeac](assets/maaeac.png)
 
 ## Acknowledgement
 We have based our model development on [LCF-ATEPC](https://github.com/yangheng95/LCF-ATEPC). Thanks for their contribution.

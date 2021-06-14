@@ -335,7 +335,7 @@ def parse_experiments(path):
         parser = argparse.ArgumentParser()
         parser.add_argument("--dataset", default=config['dataset'], type=str)
         parser.add_argument("--output_dir", default=config['output_dir'], type=str)
-        parser.add_argument("--SRD", default=int(config['SRD']), type=int)
+        parser.add_argument("--SDRD", default=int(config['SDRD']), type=int)
         parser.add_argument("--learning_rate", default=float(config['learning_rate']), type=float,
                             help="The initial learning rate for Adam.")
         parser.add_argument("--use_unique_bert", default=bool(config['use_unique_bert']), type=bool)
@@ -368,8 +368,6 @@ if __name__ == "__main__":
 
     index = GPUManager().auto_choice()
     device = torch.device("cuda:" + str(index) if torch.cuda.is_available() else "cpu")
-
-    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     exp_configs = parse_experiments(experiments.config_path)
     n = 1

@@ -7,6 +7,8 @@ import os
 import spacy
 import networkx as nx
 
+nlp = spacy.load("en_core_web_lg")
+
 class InputExample(object):
     """A single training/test example for simple sequence classification."""
 

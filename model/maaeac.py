@@ -144,7 +144,6 @@ class MAAEAC(BertForTokenClassification):
         asps = aspect_indices.cpu().numpy()  # batch_size x aspect_len
         if distances_input is not None:
             distances_input = distances_input.cpu().numpy()
-        # mask_len = self.args.SDRD
         mask_len = self.args.SDRD
         masked_text_raw_indices = np.ones((text_local_indices.size(0), self.args.max_seq_length, self.hidden), dtype=np.float32)  # batch_size x seq_len x hidden size
         for text_i, asp_i in zip(range(len(texts)), range(len(asps))):  # For each sample
